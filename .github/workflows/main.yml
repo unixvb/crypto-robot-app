@@ -26,8 +26,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.x'
-    
-      - name: Install dependencies and build the app
+
+      - name: Identify Author
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Install Dependencies and Build the App
         run: |
           npm i
           npm run deploy
