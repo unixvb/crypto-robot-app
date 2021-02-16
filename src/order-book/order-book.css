@@ -1,0 +1,30 @@
+.root {
+    display: grid;
+    grid-template-areas:
+            "symbol bidPrice bidQty"
+            "symbol askPrice askQty";
+    grid-template-columns: repeat(3, 170px);
+    grid-gap: 1vw;
+}
+
+.symbol {
+    grid-area: symbol;
+}
+
+.bid-price {
+    grid-area: bidPrice;
+    color: rgb(248, 73, 96);
+}
+
+.bid-qty {
+    grid-area: bidQty;
+}
+
+.ask-price {
+    grid-area: askPrice;
+    color: rgb(2, 192, 118);
+}
+
+.ask-qty {
+    grid-area: askQty;
+}
