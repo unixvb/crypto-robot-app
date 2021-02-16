@@ -29,11 +29,6 @@ jobs:
         with:
           node-version: '14.x'
 
-      - name: Identify Author
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
       - name: Cache node modules
         uses: actions/cache@v2
         env:
