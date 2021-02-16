@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "https://unixvb.github.io/crypto-robot-app/static/css/main.ca6f2114.chunk.css",
+    "main.js": "https://unixvb.github.io/crypto-robot-app/static/js/main.4ced29ea.chunk.js",
+    "main.js.map": "https://unixvb.github.io/crypto-robot-app/static/js/main.4ced29ea.chunk.js.map",
+    "runtime-main.js": "https://unixvb.github.io/crypto-robot-app/static/js/runtime-main.946b02f8.js",
+    "runtime-main.js.map": "https://unixvb.github.io/crypto-robot-app/static/js/runtime-main.946b02f8.js.map",
+    "static/js/2.f147389b.chunk.js": "https://unixvb.github.io/crypto-robot-app/static/js/2.f147389b.chunk.js",
+    "static/js/2.f147389b.chunk.js.map": "https://unixvb.github.io/crypto-robot-app/static/js/2.f147389b.chunk.js.map",
+    "static/js/3.c5772885.chunk.js": "https://unixvb.github.io/crypto-robot-app/static/js/3.c5772885.chunk.js",
+    "static/js/3.c5772885.chunk.js.map": "https://unixvb.github.io/crypto-robot-app/static/js/3.c5772885.chunk.js.map",
+    "index.html": "https://unixvb.github.io/crypto-robot-app/index.html",
+    "static/css/main.ca6f2114.chunk.css.map": "https://unixvb.github.io/crypto-robot-app/static/css/main.ca6f2114.chunk.css.map",
+    "static/js/2.f147389b.chunk.js.LICENSE.txt": "https://unixvb.github.io/crypto-robot-app/static/js/2.f147389b.chunk.js.LICENSE.txt",
+    "static/media/logo.7f465dc0.svg": "https://unixvb.github.io/crypto-robot-app/static/media/logo.7f465dc0.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.946b02f8.js",
+    "static/js/2.f147389b.chunk.js",
+    "static/css/main.ca6f2114.chunk.css",
+    "static/js/main.4ced29ea.chunk.js"
+  ]
+}
