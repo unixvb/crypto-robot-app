@@ -15,6 +15,8 @@ const initialBtcBooKState: IndividualSymbolBookType = {
 export const OrderBook = () => {
     const [btcBook, setBtcBook] = useState(initialBtcBooKState);
 
+    console.log('test');
+
     useEffect(() => {
         const ws = getBookTickerStream('BTCUSDT', (data) => setBtcBook(data));
 
