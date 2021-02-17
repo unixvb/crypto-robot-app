@@ -22,7 +22,10 @@ export const OrderBook = () => {
     }, []);
 
     return <div className="root">
-        <p className="symbol">{btcBook.s}</p>
+        <p className="symbol">
+            Test
+            {btcBook.s}
+        </p>
 
         <p className="bid-price">{btcBook.b}</p>
         <p className="bid-qty">{btcBook.B}</p>
