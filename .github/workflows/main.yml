@@ -47,5 +47,5 @@ jobs:
         run: |
           git config --global user.email "unixvb@gmail.com"
           git config --global user.name "Andrii Ivaniv"
-          git remote set-url origin https://${{ GITHUB_ACTOR }}:${{ secrets.MY_PASSWORD }}@github.com/${{ GITHUB_REPOSITORY }}.git
+          git remote set-url origin https://$GITHUB_ACTOR:${{ secrets.MY_PASSWORD }}@github.com/$GITHUB_REPOSITORY.git
           yarn deploy
