@@ -31,11 +31,8 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Install Dependencies
-        run: yarn install
+      - run: yarn install
 
-      - name: Build
-        run: yarn build
+      - run: yarn build
 
-      - name: Deploy
-        run: ./node_modules/gh-pages -d build
+      - run: yarn deploy
