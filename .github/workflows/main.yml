@@ -1,30 +1,24 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
 
-# Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ master ]
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  preparation:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v2
+      - name: Clone repository
+        uses: actions/checkout@v2
+
+      - name: Use Node 14.x
+        uses: actions/setup-node@v2
         with:
           node-version: '14.x'
 
-  dependencies:
-    runs-on: ubuntu-latest
-    needs: preparation
-    steps:
-      - name: Cache node modules
+      - name: Cache node_modules
         uses: actions/cache@v2
         env:
           cache-name: cache-node-modules
@@ -36,16 +30,33 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      - run: yarn install
 
-  build:
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Build
+          run: yarn build
+
+      - name: Share artifact inside workflow
+          uses: actions/upload-artifact@v2
+          with:
+            name: cr-app-artifacts
+            path: build
+
+  deploy:
     runs-on: ubuntu-latest
-    needs: dependencies
+    needs: build
     steps:
-      - uses: actions/checkout@v2
+      - name: Get artifact
+          uses: actions/download-artifact@v2
+          with:
+            name: cr-app-artifacts
+
       - name: Authentication
         run: |
           git config --global user.email "unixvb@gmail.com"
           git config --global user.name "Andrii Ivaniv"
           git remote set-url origin https://$GITHUB_ACTOR:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/$GITHUB_REPOSITORY.git
-      - run: yarn deploy
+
+      - name: Deploy
+          run: gh-pages -d build
