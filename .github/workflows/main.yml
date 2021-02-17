@@ -36,9 +36,9 @@ jobs:
       - run: yarn build
 
       - name: Authentication
-          run: |
-            git config --global user.email "unixvb@gmail.com"
-            git config --global user.name "Andrii Ivaniv"
-            git remote set-url origin https://$GITHUB_ACTOR:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/$GITHUB_REPOSITORY.git
+        run: |
+          git config --global user.email "unixvb@gmail.com"
+          git config --global user.name "Andrii Ivaniv"
+          git remote set-url origin https://$GITHUB_ACTOR:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/$GITHUB_REPOSITORY.git
 
       - run: yarn deploy
